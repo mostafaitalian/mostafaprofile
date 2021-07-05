@@ -71,7 +71,7 @@
 
                     <li class="flex-ro-style-item"><a href="./about.html" rel="noopener noreferrer">About</a></li>
                     <li class="flex-ro-style-item">Products</li>
-                    <li class="flex-ro-style-item"><a href="{% url 'projects:project_list' %}" rel="noopener noreferrer">Previous Works</a></li>
+                    <li class="flex-ro-style-item"><a class="x {% if request.path == '/projects/' %}activee{% endif %}" href="{% url 'projects:project_list' %}" rel="noopener noreferrer">Previous Works</a></li>
                     <li class="flex-ro-style-item">Contact Me</li>
                     <li class="flex-ro-style-item menu" id="nav2-ul-li-menu">
                         <div class="hidden" id="menu-div">
