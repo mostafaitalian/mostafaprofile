@@ -371,6 +371,9 @@
         background-color: #d61921;
        
     }
+    .active{
+        color: black;
+    }
     .flex-row-style{
         /* display:block; */
         /* width: 10%; */

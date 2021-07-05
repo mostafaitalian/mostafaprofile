@@ -6,7 +6,7 @@ from django.core import serializers
 
 # Create your views here.
 
-@login_required()
+# @login_required()
 def dashboard(request):
     user = get_user_model().objects.get(id=1)
     profile = user.profile

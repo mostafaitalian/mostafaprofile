@@ -10,7 +10,11 @@
 
     <link rel="stylesheet" href="{% static 'css/styleIndex.css' %}">
 
-    
+    <style>
+        .activee{
+            color:black !important;
+        }
+    </style>
     {% block css1 %}
         
     {% endblock css1 %}
@@ -63,7 +67,7 @@
                 </div>
                 <ul class="nav2-ul flex-row-style" id="frow-item2">
                     <li class="flex-ro-style-item active"><a href="{% url 'home' %}" rel="noopener noreferrer">Home</a></li>
-                    <li class="flex-ro-style-item active"><a href="{% url 'myprofile:myprofile_dashboard' %}" rel="noopener noreferrer">Dashboard</a></li>
+                    <li class="flex-ro-style-item"><a class="x {% if request.path == '/profile/dashboard/' %}activee{% endif %}" href="{% url 'myprofile:myprofile_dashboard' %}" rel="noopener noreferrer">Dashboard</a></li>
 
                     <li class="flex-ro-style-item"><a href="./about.html" rel="noopener noreferrer">About</a></li>
                     <li class="flex-ro-style-item">Products</li>

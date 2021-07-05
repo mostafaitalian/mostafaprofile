@@ -15,7 +15,9 @@
     .sidebar {
         float: left;
         background-color: teal;
-        height: 120vh;
+        vertical-align: top;
+        height: 165vh;
+       
         position: sticky;
         top: 0%
     }
@@ -211,6 +213,15 @@
     .personal-skills-ul{
         list-style: none;
         list-style-position: outside;
+    }
+    @media only screen and (max-width: 560px) {
+        .sidebar{
+            display: none;
+            float: none;
+        }
+        .content{
+            margin: auto;
+            width: 100%;        }
     }
     @media only screen and (max-width: 750px) {
         .mmodal{
@@ -520,11 +531,23 @@
 
 <script>
     function btnModalClick(x){
-    alert(x.parentElement.parentElement.parentElement.className)    
+    //alert(x.parentElement.parentElement.parentElement.className)    
     x.parentElement.parentElement.style.animation = 'none';
 }
 
     document.addEventListener('DOMContentLoaded', function () {
+
+        //alert(window.innerWidth)
+        window.addEventListener('resize', function(){
+            if(window.innerWidth < 560){
+                document.querySelector("div.content").classList.remove("col-9");
+                document.querySelector("div.content").classList.add("col-12");
+            }else{
+                document.querySelector("div.content").classList.add("col-9");
+                document.querySelector("div.content").classList.remove("col-12");            
+            }
+        })
+       
         let divs = document.getElementsByClassName('item');
         let length = divs.length;
         let lists = document.querySelectorAll('.list-side li')
@@ -608,6 +631,7 @@
         };
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, config);
+
     })
 </script>
 {% endblock script1 %}
